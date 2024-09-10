@@ -1,0 +1,67 @@
+﻿@model User
+
+@{
+}
+
+<section class="info">
+    <div class="container" style="min-height:1100px;">
+        <a asp-controller="Account" asp-action="Account" class="title3" style="margin-bottom: 10px;"> <- Вернуться назад </a>
+        <div class="logout">
+            <h1 class="title2 logout-title">Личный кабинет</h1>
+        </div>
+        <form method="post" asp-controller="Account" asp-action="AccountUpdateInfo">
+        <div class="personal-info">
+            <div style="display:flex; justify-content: space-between; align-items: center;">
+                <h2 class="title9">Изменить личные данные</h2>
+                <input type="submit" class="personal-info__button" value="Изменить">
+            </div>
+                    
+            <input type="hidden" asp-for="IdUser" value="@Model.IdUser">
+            <div class="personal-info__wrapper">
+                <div class="personal-info__input">
+                    <h3 class="title10">Логин</h3>
+                    <div class="personal-info__input-div">
+                        <input type="text" class="account-input" asp-for="Login" value="@Model.Login">
+                    </div>
+                </div>
+                <div class="personal-info__input">
+                    <h3 class="title10">Email</h3>
+                    <div class="personal-info__input-div">
+                        <input type="email" class="account-input" asp-for="Email" value="@Model.Email">
+                    </div>
+                </div>
+                <div class="personal-info__input-last">
+                    <h3 class="title10">ФИО</h3>
+                    <div class="personal-info__input-div">
+                        <input type="text" class="account-input" asp-for="FullName" value="@Model.FullName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-info__wrapper">
+                <div class="personal-info__input">
+                    <h3 class="title10">Телефон</h3>
+                    <div class="personal-info__input-div">
+                        <input type="tel" class="account-input" asp-for="Telephone" value="@Model.Telephone">
+                    </div>
+                </div>
+                <div class="personal-info__input">
+                    <h3 class="title10">Введите пароль</h3>
+                    <div class="personal-info__input-button-div">
+                        <div class="personal-info__input-div">
+                            <input type="text" class="account-input" name="oldPassword" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal-info__input-last">
+                    <h3 class="title10">Новый пароль</h3>
+                    <div class="personal-info__input-div">
+                        <input type="text" class="account-input" name="newPassword" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="title9" style="margin-top: 20px; color: white;"></div>
+        </form>
+    </div>
+</section>

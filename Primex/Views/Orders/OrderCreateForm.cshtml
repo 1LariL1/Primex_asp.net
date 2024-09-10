@@ -1,0 +1,71 @@
+﻿@model Order
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container container1">
+    <a asp-controller="Orders" asp-action="OrderTable" class="title3"> <- Вернуться назад </a>
+    <form asp-controller="Orders" asp-action="Create" method="post">
+        <div class="admin-box">
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-left">
+                    <label>Пользователь</label>
+                </div>
+                <select asp-for="IdUser" class="admin-input" required style="border: none; padding-right: 70px;" asp-items="@ViewData["IdUser"] as SelectList">
+                    <option value="">Выберите пользователя</option>
+                </select>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Услуга</label>
+                </div>
+                <select asp-for="IdService" class="admin-input" required style="border: none;" asp-items="@ViewData["IdService"] as SelectList">
+                    <option value="">Выберите услугу</option>
+                </select>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Цена</label>
+                </div>
+                <input type="number" asp-for="Price" class="admin-input" required>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Статус</label>
+                </div>
+                <select asp-for="Status" class="admin-input" required style="border: none; padding-right: 70px;">
+                    <option value="">Выберите статус</option>
+                    <option value="В обработке">В обработке</option>
+                    <option value="Готов">Готов</option>
+                    <option value="Выполнен">Выполнен</option>
+                    <option value="Отменен">Отменен</option>
+                </select>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Дата</label>
+                </div>
+                <input type="date" asp-for="Date" class="admin-input" required style="padding-bottom: 18px;">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Время</label>
+                </div>
+                <input type="time" asp-for="Time" class="admin-input" required style="border: none; padding-bottom: 16px;">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-right">
+                    <label>Адрес</label>
+                </div>
+                <input type="text" asp-for="Address" class="admin-input" required>
+            </div>
+        </div>
+        <button type="submit" class="main-about-primex__button">Добавить</button>
+    </form>
+</div>

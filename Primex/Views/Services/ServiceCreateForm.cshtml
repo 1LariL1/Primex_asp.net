@@ -1,0 +1,32 @@
+﻿@model Service
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container container1">
+    <a asp-controller="Services" asp-action="ServiceTable" class="title3"> <- Вернуться назад </a>
+    <form asp-controller="Services" asp-action="Create" method="post">
+        <div class="admin-box">
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-left">
+                    <label>Услуга</label>
+                </div>
+                <input asp-for="Service1" type="text" class="admin-input" required>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Цена за 1 кв.м.</label>
+                </div>
+                <input asp-for="Price" type="number" class="admin-input" required>
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-right">
+                    <label>Описание</label>
+                </div>
+                <input asp-for="Description" type="text" class="admin-input" required>
+            </div>
+        </div>
+        <button type="submit" class="main-about-primex__button">Добавить</button>
+    </form>
+</div>

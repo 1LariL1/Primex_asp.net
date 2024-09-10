@@ -1,0 +1,48 @@
+# Папки, создаваемые Visual Studio
+.vs/
+.vscode/
+*.userosscache
+*.suo
+*.user
+*.userprefs
+*.rsuser
+*.rsbo
+*.sln.docstates
+
+# Результаты сборки
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.log
+
+# Папка пакетов NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Файлы конфигурации Entity Framework
+appsettings.Development.json
+
+# Конфигурация пользователя IIS
+*.config
+
+# Кэш для Visual Studio Code
+.vscode/
+
+# Файлы локальной базы данных
+*.mdf
+*.ldf
+
+# Файлы пакета Paket
+.paket/paket.exe
+paket-files/
+
+# Конфигурация сервера
+.publish/
+
+# Файлы резервных копий
+*_OLD.cs
+*_BACKUP.cs
+*_COPY.cs

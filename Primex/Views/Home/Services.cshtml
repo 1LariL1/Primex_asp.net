@@ -1,0 +1,121 @@
+﻿@{
+   
+}
+<style>
+    option {
+        background-color: #252525;
+    }
+</style>
+<section class="services">
+    <div class="container">
+        <h1 class="title2">Услуги</h1>
+
+        <div class="services__wrapper">
+            <div class="services__order">
+                <h3 class="title6">
+                    Оказание клининговых услуг
+                    <br>и эксплуатация зданий
+                    <br>и сооружений.
+                </h3>
+
+                <p class="paragraph1">Компания ПРИМЕКС работает с 1991 года.</p>
+                <p class="paragraph1 paragraph1-services">
+                    За это время мы открыли подразделение по
+                    <br>обслуживанию ворсовых грязезащитных
+                    <br>покрытий, начали производство сотовых ГЗП,
+                    <br>открыли собственную лабораторию и начали
+                    <br>поставки продукции за рубеж.
+                </p>
+                <p class="paragraph1 paragraph1-services">
+                    В своей работе мы используем передовые
+                    <br>технологии, последние научные разработки,
+                    <br>самое современное оборудование и высоко
+                    <br>эффективные химические средства, в том
+                    <br>числе и собственного производства.
+                </p>
+
+                <a class="services__button paragraph1" href="auth-reg.php">Заказать услугу</a>
+            </div>
+
+            <div class="services__catalog">
+                <div class="services__catalog-one">
+                    <div class="services__one">
+                        <h3 class="title7">Уборка прилегающей территории</h3>
+                        <p class="paragraph2" style="max-width: 160px;">Зимняя; Комплексная; Уборка снега; Вывоз снега; Мойка фасада; Сбор и вывоз мусора.</p>
+                    </div>
+                    <div class="services__two">
+                        <h3 class="title7">Уборка внутренних помещений</h3>
+                        <p class="paragraph2" style="max-width: 180px;">Ежедневная; Послестроительная; Генеральная; Гигиеническая; Быстрая; Профессиональная; Санитарная.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="services__catalog-two">
+                <div class="services__three">
+                    <h3 class="title7">Специализированные услуги</h3>
+                    <p class="paragraph2" style="max-width: 140px;">Дезинфекция; Дезинфекция от COVID; Дератизация.</p>
+                </div>
+                <div class="services__four">
+                    <h3 class="title7">Частный сектор</h3>
+                    <p class="paragraph2" style="max-width: 170px;">Мойка окон; Химчистка мебели; Генеральная уборка; Послестроительная уборка.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h1 class="title2">Примерный расчет стоимости</h1>
+        <div class="heading-calculater">
+            <img src="/img/services-img.png" alt="Уборка Primex" />
+            <div class="calc_wrapper">
+                <div class="calc-box">
+                    <div class="calc-inputs">
+                        <p class="calc-label"><span class="calc-num">1</span> Площадь помещения, кв.м</p>
+                        <input type="number" placeholder="100" class="calc-input" name="Square" id="Square" oninput="calculate()">
+                        <p class="calc-label"><span class="calc-num">2</span> Услуга</p>
+                        <select required class="calc-drop" name="Service" oninput="calculate()" id="Service" asp-items="@ViewData["IdService"] as SelectList">
+                            <option class="personal-form__option" value="">-- Выберите услугу --</option>
+                        </select>
+                        <p class="calc-label"><span class="calc-num">3</span> Время</p>
+                        <select name="Time" class="calc-drop" style="margin-bottom: 0px;" required oninput="calculate()" id="Time">
+                            <option value="" class="personal-form__option">--Выберите время--</option>
+                            <option value="1" class="personal-form__option">Утро (9:00-12:00)</option>
+                            <option value="5" class="personal-form__option">День (13:00-16:00)</option>
+                            <option value="10" class="personal-form__option">Вечер (17:00-20:00)</option>
+                        </select>
+                    </div>
+                    <div class="calc-price">
+                        <p class="calc-label"><span class="calc-num">4</span> День</p>
+                        <select name="Day" class="calc-drop" required oninput="calculate()" id="Day">
+                            <option value="" class="personal-form__option">--Выберите день--</option>
+                            <option value="" class="personal-form__option">Будний день</option>
+                            <option value="5" class="personal-form__option">Выходной день</option>
+                        </select>
+                        <p class="calc-cost">Итоговая цена</p>
+                        <div class="cost-box">
+                            <p class="cost-font" id="result"></p>
+                        </div>
+                        <script>
+                            function calculate() {
+                                var Square = document.getElementById("Square").value;
+                                var Service = document.getElementById("Service").value;
+                                var Time = document.getElementById("Time").value;
+                                var Day = document.getElementById("Day").value;
+                                var sum = Square * Service;
+                                var percent_decimal = Time / 100;
+                                var percent_decimal_day = Day / 100;
+                                var percent_amount = sum * percent_decimal;
+                                var percent_amount_day = sum * percent_decimal_day;
+                                var result = sum + percent_amount + percent_amount_day;
+                                document.getElementById("result").innerHTML = result;
+                            }
+                        </script>
+                        <a class="calc_button" asp-controller="Account" asp-action="Account">Заказать услугу</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

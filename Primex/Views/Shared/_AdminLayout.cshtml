@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/site.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body style="background-color: #252525">
+    <header class="header-main">
+        <div class="container">
+            <div class="header-main__nav" style="justify-content: center;">
+                <ul class="header-main__ul">
+                    <li><a asp-controller="Users" asp-action="UserTable" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Users" ? "li-active" : "li-inactive")">ПОЛЬЗОВАТЕЛИ</a></li>
+
+                    <li><a asp-controller="Orders" asp-action="OrderTable" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Orders" ? "li-active" : "li-inactive")">ЗАКАЗЫ</a></li>
+
+                    <li><a  asp-controller="Home" asp-action="Index" class="li-inactive"><img src="/img/logo-primex-menu.png" alt="Логотип Primex"></a></li>
+
+                    <li><a asp-controller="Services" asp-action="ServiceTable" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Services" ? "li-active" : "li-inactive")">УСЛУГИ</a></li>
+
+                    <li><a asp-controller="Messages" asp-action="MessageTable" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Messages" ? "li-active" : "li-inactive") li-inactive-last">ЗАЯВКИ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__left">
+                    <ul class="footer__ul">
+                        <li><a asp-controller="Home" asp-action="About" class="li-inactive">О КОМПАНИИ</a></li>
+
+                        <li><a asp-controller="Home" asp-action="Services" class="li-inactive">УСЛУГИ</a></li>
+
+                        <li><a asp-controller="Home" asp-action="Contacts" class="li-inactive">КОНТАКТЫ</a></li>
+
+                        <li><a asp-controller="Account" asp-action="Account" class="li-inactive li-inactive-last">ЛИЧНЫЙ КАБИНЕТ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <img src="/img/ins.png" alt="Логотип Инстаграм" class="footer__img">
+                    <img src="/img/whatap.png" alt="Логотип Ватсап" class="footer__img">
+                    <img src="/img/telegram.png" alt="Логотип Телеграм" class="footer__img">
+                    <img src="/img/utb.png" alt="Логотип Ютуб" class="footer__img">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

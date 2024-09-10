@@ -1,0 +1,1207 @@
+/*______________________fonts_______________________*/
+@font-face {
+    font-family: "RalewayRegular";
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: "RalewayLight";
+    src: url(../fonts/Raleway-Light.ttf);
+}
+
+@font-face {
+    font-family: "RalewayBold";
+    src: url(../fonts/Raleway-Bold.ttf);
+}
+
+/*______________________settings_______________________*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/*______________________fonts-style_______________________*/
+
+.title1 {
+    color: #FFF;
+    text-align: center;
+    font-family: RalewayBold;
+    font-size: 36px;
+    padding: 90px 0 50px 0;
+}
+
+.paragraph1 {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 20px;
+}
+
+.paragraph1-center {
+    text-align: center;
+}
+
+.paragraph1-purple-bold {
+    color: #8960AF;
+    font-family: RalewayBold;
+}
+
+
+
+.title3 {
+    color: white;
+    font-family: RalewayRegular;
+    font-size: 24px;
+}
+
+.title2 {
+    color: #FFF;
+    font-family: RalewayBold;
+    font-size: 36px;
+    padding: 0 0 50px 0;
+}
+
+.title4 {
+    color: white;
+    font-family: RalewayBold;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.title5 {
+    color: #FFF;
+    font-family: RalewayBold;
+    font-size: 32px;
+    padding-bottom: 20px;
+}
+
+.title5-contacts {
+    padding-bottom: 50px;
+}
+
+.title6 {
+    color: white;
+    font-family: RalewayBold;
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+.title7 {
+    color: #000;
+    font-family: RalewayBold;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.paragraph2 {
+    color: #000;
+    font-family: RalewayLight;
+    font-size: 16px;
+}
+
+.title8 {
+    color: #8960AF;
+    font-family: RalewayBold;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.title9 {
+    color: #8960AF;
+    font-family: RalewayBold;
+    font-size: 32px;
+    padding-bottom: 30px;
+    width: 490px;
+}
+
+.title10 {
+    color: #8960AF;
+    font-family: RalewayRegular;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.account-input {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    width: 280px;
+}
+
+.account-paragraph {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.title11 {
+    width: 140px;
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 20px;
+}
+
+.account-input2 {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 20px;
+    width: 280px;
+}
+
+
+
+/*______________________settings_______________________*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #252525;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1520px;
+    padding: 0;
+}
+
+select {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+    select:not([.personal-form__dropdown]) {
+        padding-right: 1.2em;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 1.25em) 1.65em;
+        background-size: 0.85em auto;
+        background-image: url("../img/dropdown-select.png");
+    }
+
+    /* скроет иконку стрелки в IE */
+    select::-ms-expand {
+        display: none;
+    }
+
+input {
+    all: unset;
+}
+
+/*______________________auth-reg_______________________*/
+.auth-bg {
+    background: url("../img/auth-reg-bg.png") 0 0/cover no-repeat;
+}
+
+.heading__login {
+}
+
+.heading__wrapper, .heading__wrapper-reg {
+    display: flex;
+    background-color: #252525;
+    padding: 25px;
+    max-width: 1121px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 172px;
+}
+
+.login__form, .reg__form {
+    padding: 80px;
+    padding-bottom: 0px;
+    border-radius: 15px 0 0 15px;
+    width: 360px;
+}
+
+.form__buttons {
+    display: flex;
+}
+
+.form__p {
+    font-family: "RalewayRegular";
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.form__reg {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    color: #71768A;
+    margin-left: 44px;
+    font-family: "RalewayRegular";
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.login__h3, .reg__h3 {
+    font-family: "RalewayBold";
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+    margin-top: 87px;
+    margin-bottom: 5px;
+}
+
+.login__p, .reg__p {
+    font-family: "RalewayRegular";
+    font-size: 16px;
+    line-height: 16px;
+    color: #71768A;
+}
+
+.login__input, .reg__input {
+    margin-top: 54px;
+}
+
+.input__login, .input__email-reg {
+    background-color: white;
+    padding: 16px 185px 12px 13px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-family: "RalewayLight";
+}
+
+.input__password, .input__login-reg, .input__password-reg {
+    background-color: white;
+    padding: 16px 185px 12px 13px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    font-family: "RalewayLight";
+}
+
+.login__button, .reg__button {
+    font-family: "RalewayRegular";
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5A3A79;
+    padding: 13px 69px 12px 69px;
+}
+
+.login__reg {
+    margin-top: 160px;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: "RalewayRegular";
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: white;
+}
+
+.error {
+    font-family: "RalewayRegular";
+    font-size: 15px;
+    color: white;
+}
+
+.form__log {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    color: #71768A;
+    font-family: "RalewayRegular";
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.form__p-reg {
+    font-family: "RalewayRegular";
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+    margin-left: 44px;
+}
+
+
+
+/*______________________reg_______________________*/
+.heading__reg {
+    display: none;
+}
+
+.reg__login {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: "RalewayRegular";
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: white;
+}
+
+
+
+/*______________________b_______________________*/
+.b__show {
+    display: none !important;
+    transition: all ease-in 0.2s;
+    position: fixed;
+    z-index: 2;
+}
+
+.b__show-two {
+    display: block !important;
+    transition: all ease-in 0.2s;
+    /* position: fixed; */
+    z-index: 2;
+}
+
+/*______________________header-main_______________________*/
+
+.header-main {
+    background-color: #252525;
+}
+
+.header-main__nav {
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-main__ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-calculater {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.heading-calculater-show {
+    position: fixed;
+    z-index: 3;
+}
+
+.heading-calculater-close {
+    display: none;
+}
+
+.calc_wrapper {
+    padding: 50px 50px 50px 50px;
+    background: #5A3A79;
+    box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+
+}
+
+.calc_close {
+    border: none;
+    background: none;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.title-calc {
+    color: white;
+    font-family: RalewayBold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.title-close {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calc-label {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    margin-bottom: 9px;
+}
+
+.calc-num {
+    color: #FFF;
+    font-family: RalewayBold;
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.calc-input {
+    border: 1px solid #FFF;
+    background-color: none;
+    border-radius: 10px;
+    padding: 11px 33px 11px 13px;
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 12px;
+    width: 182px;
+    margin-bottom: 20px;
+}
+
+.calc-drop {
+    background: none;
+    outline: none;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    padding: 11px 33px 11px 13px;
+    width: 228px;
+    margin-bottom: 20px;
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 12px;
+}
+
+select:not(.calc-drop) {
+    padding-right: 1.2em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1.25em) 1.5em;
+    background-size: 0.70em auto;
+    background-image: url("../img/dropdown-select.png");
+}
+
+.calc-box {
+    display: flex;
+    justify-content: space-between;
+    width: 630px;
+}
+
+.calc-cost {
+    font-family: RalewayRegular;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    color: #FFF;
+}
+
+.cost-font {
+    font-family: RalewayBold;
+    font-size: 24px;
+    text-align: center;
+    color: #FFF;
+}
+
+.cost-box {
+    background-color: #171717;
+    border-radius: 10px;
+    padding: 4px 90px 4px 90px;
+}
+
+.calc_button {
+    border-radius: 5px;
+    background: #8960AF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    padding: 9px 65px 8px 65px;
+    margin-top: 25px;
+    display: inline-block;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+}
+
+/*______________________li_______________________*/
+.li-inactive {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    margin-right: 62px;
+}
+
+.li-inactive-last {
+    margin-right: 0px;
+}
+
+.li-inactive-first {
+    margin-left: 421px;
+}
+
+.li-active {
+    color: #8960AF;
+    font-family: RalewayBold;
+    font-size: 16px;
+    margin-right: 62px;
+}
+
+.li-button {
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    border: none;
+    background: none;
+}
+
+
+
+/*______________________main-text_______________________*/
+
+.main-text {
+    background: url("../img/main-background.png") 0 0/cover no-repeat;
+}
+
+
+
+.main-text__div {
+    text-align: center;
+    padding: 149px 0 149px 0;
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 36px;
+}
+
+
+/*______________________why-us_______________________*/
+
+.why-us {
+    background-color: #252525;
+}
+
+.why-us__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+    .why-us__wrapper:last-child {
+        padding-bottom: 0px;
+    }
+
+.why-us__left {
+    display: flex;
+    align-items: center;
+}
+
+.why-us__right {
+    display: flex;
+    align-items: center;
+}
+
+.why-us__paragraph {
+    text-align: center;
+    width: 502px;
+    height: 60px;
+}
+
+.why-us__paragraph-right {
+    margin-right: 22px;
+}
+
+.why-us__paragraph-left {
+    margin-left: 22px;
+}
+
+/*______________________main-about-primex_______________________*/
+
+.main-about-primex {
+    background-color: #252525;
+}
+
+.main-about-primex__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-about-primex__text {
+    padding: 50px 0 50px 0;
+}
+
+.main-about-primex__text-space {
+    margin-bottom: 40px;
+}
+
+.main-about-primex__button {
+    border-radius: 5px;
+    background: #5A3A79;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.50);
+    color: #FFF;
+    text-align: center;
+    font-family: RalewayRegular;
+    font-size: 20px;
+    padding: 12px 136px 13px 136px;
+}
+
+/*______________________main-partners_______________________*/
+
+.main-partners {
+    background-color: #252525;
+}
+
+.main-partners-imgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 90px;
+}
+
+.main-partners-img {
+    margin-right: 66px;
+}
+
+
+/*______________________about-primex.html_______________________*/
+/*______________________about-primex-block_______________________*/
+
+.about-primex-block {
+    background-color: #252525;
+}
+
+.about-primex-block__wrapper {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+    .about-primex-block__wrapper:last-child {
+        padding-bottom: 0px;
+    }
+
+.about-primex-block__first-block {
+    background-color: #5A3A79;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px 0 20px 0;
+    width: 421px;
+}
+
+
+
+.about-primex-block__second-block {
+    background-color: #2F1E4A;
+    border-radius: 10px;
+    padding: 20px 0 20px 0;
+    width: 421px;
+}
+
+
+.about-primex-block__two-blocks {
+    margin-right: 30px;
+}
+
+.about-primex-block__tech {
+    border-radius: 10px;
+    background: #8960AF;
+    padding: 56px 0px 56px 0px;
+    margin-right: 30px;
+    width: 421px;
+}
+
+.about-primex-block__sert {
+    border-radius: 10px;
+    background: #2F1E4A;
+    width: 421px;
+    padding: 20px 0px 20px 0px;
+    margin-left: 30px;
+}
+
+.about-primex-block__security {
+    border-radius: 10px;
+    background: #5A3A79;
+    width: 421px;
+    padding: 43px 0px 42px 0px;
+    margin-left: 30px;
+}
+
+/*______________________about-primex-achievements_______________________*/
+
+.about-primex-achievements {
+    background-color: #252525;
+    padding-bottom: 90px;
+}
+
+.about-primex-achievements__wrapper {
+    display: flex;
+}
+
+.about-primex-achievements__text {
+    padding-right: 30px;
+}
+
+    .about-primex-achievements__text:last-child {
+        padding-right: 0px;
+    }
+
+.about-primex-achievements__photo1 {
+    margin-bottom: 30px;
+}
+
+.about-primex-achievements__photo2 {
+    margin-top: 30px;
+}
+
+.about-primex-achievements__text-bottom {
+    margin-bottom: 20px;
+}
+
+/*______________________services.html_______________________*/
+
+.services {
+    background-color: #252525;
+    padding-bottom: 90px;
+}
+
+.services__wrapper {
+    display: flex;
+}
+
+.services__order {
+    background-color: #5A3A79;
+    padding: 72px 0 60px 40px;
+    border-radius: 10px;
+    width: 530px;
+}
+
+.paragraph1-services {
+    margin-top: 20px;
+}
+
+.services__button {
+    border-radius: 5px;
+    background: #8960AF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    padding: 12px 132px 13px 132px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.services__catalog {
+    margin-left: 58px;
+}
+
+.services__catalog-two {
+    margin-left: 30px;
+}
+
+.services__one {
+    background: url("../img/services-block1.png") 0 0/cover no-repeat;
+    padding: 30px 0 0 30px;
+    width: 420px;
+    height: 270px;
+    border-radius: 10px;
+}
+
+.services__two {
+    background: url("../img/services-block3.png") 0 0/cover no-repeat;
+    padding: 30px 0 0 30px;
+    width: 420px;
+    height: 270px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.services__three {
+    background: url("../img/services-block2.png") 0 0/cover no-repeat;
+    padding: 30px 0 0 30px;
+    width: 420px;
+    height: 270px;
+    border-radius: 10px;
+}
+
+.services__four {
+    background: url("../img/services-block4.png") 0 0/cover no-repeat;
+    padding: 30px 0 0 30px;
+    width: 420px;
+    height: 270px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+/*______________________contacts.html_______________________*/
+
+.primex-contacts {
+    background-color: #252525;
+}
+
+.contacts__wrapper {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+
+.contacts__text {
+    margin-right: 30px;
+}
+
+.contacts-map {
+    margin-bottom: 90px;
+}
+
+
+/*______________________account.php_______________________*/
+
+/*______________________logout_______________________*/
+.info {
+    background-color: #252525;
+    padding-bottom: 90px;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.logout-title {
+    padding-bottom: 0px;
+}
+
+.logout-button {
+}
+
+/*______________________personal-info_______________________*/
+
+.personal-info {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 50px;
+}
+
+.personal-info__wrapper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+    .personal-info__wrapper:last-child {
+        margin-bottom: 0px;
+    }
+
+.personal-info__input {
+    margin-right: 50px;
+}
+
+.personal-info__input-last {
+    margin-right: 0px;
+}
+
+.personal-info__input-div {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 20px 25px 21px 20px;
+}
+
+.personal-info__input-button-div {
+    display: flex;
+    align-items: center;
+}
+
+.personal-info__button {
+    margin-left: 50px;
+    border-radius: 20px;
+    background: #5A3A79;
+    color: #FFF;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    padding: 10px 20px 10px 20px;
+}
+
+/*______________________personal-orders_______________________*/
+
+.personal-orders {
+    background-color: #252525;
+    padding-bottom: 90px;
+}
+
+.personal-orders__wrapper {
+    display: flex;
+}
+
+.personal-orders__attribute {
+    margin-right: 10px;
+}
+
+.personal-orders__name-atr1 {
+    background-color: #5A3A79;
+    padding: 18px 56px 19px 21px;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.personal-orders__name-atr2 {
+    background-color: #5A3A79;
+    padding: 18px 159px 19px 21px;
+}
+
+.personal-orders__name-atr3 {
+    background-color: #5A3A79;
+    padding: 18px 7px 19px 21px;
+}
+
+.personal-orders__name-atr4 {
+    background-color: #5A3A79;
+    padding: 18px 5px 19px 21px;
+}
+
+.personal-orders__name-atr5 {
+    background-color: #5A3A79;
+    padding: 18px 15px 19px 21px;
+}
+
+.personal-orders__name-atr6 {
+    background-color: #5A3A79;
+    padding: 18px 16px 19px 21px;
+}
+
+.title11-1 {
+    width: 100px;
+}
+
+.personal-orders__name-atr7 {
+    background-color: #5A3A79;
+    padding: 18px 117px 19px 21px;
+    border-radius: 0px 10px 0px 0px;
+}
+
+.personal-orders__atr {
+    background-color: #8960AF;
+    padding: 21px;
+    margin-bottom: 10px;
+}
+
+.account-atr1 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 175px;
+}
+
+.account-atr2 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 278px;
+}
+
+.account-atr3 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 127px;
+}
+
+.account-atr4 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 125px;
+}
+
+.account-atr5 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 139px;
+}
+
+.account-atr6 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 96px;
+}
+
+.account-atr7 {
+    color: #000;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 236px;
+}
+
+/*______________________personal-form_______________________*/
+
+.personal-form {
+    background-color: #252525;
+    padding-bottom: 90px;
+}
+
+.personal-form__wrapper {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 50px;
+}
+
+.personal-form__dropdown {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 20px 25px 21px 20px;
+    background: none;
+    outline: none;
+    width: 326.6px;
+    margin-bottom: 20px;
+}
+
+.personal-form__option {
+    background-color: #252525;
+}
+
+.personal-form__address {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 20px 25px 21px 20px;
+    background: none;
+    outline: none;
+}
+
+.personal-form__service-address {
+    margin-right: 50px;
+}
+
+.personal-form__inputs {
+    display: flex;
+}
+
+.personal-form__comment {
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding: 20px;
+    background: none;
+    outline: none;
+    width: 451px;
+    height: 151px;
+    margin-right: 50px;
+}
+
+.personal-form__comment-button {
+    display: flex;
+}
+
+.personal-form__button {
+    border-radius: 20px;
+    background: #5A3A79;
+    font-family: RalewayRegular;
+    font-size: 16px;
+    padding: 10px 20px 11px 20px;
+    color: #FFF;
+    height: 19px;
+    margin-top: 27px;
+}
+/*______________________footer_______________________*/
+
+footer {
+    background-color: #5A3A79;
+}
+
+.footer__wrapper {
+    display: flex;
+    padding: 48px 0 50px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__ul {
+    display: flex;
+}
+
+.footer__right {
+    display: flex;
+}
+
+.footer__img {
+    margin-left: 14px;
+}
+
+/*______________________admin_______________________*/
+
+.admin__table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.admin__th {
+    background-color: #5A3A79;
+    color: white;
+    padding: 21px;
+    font-family: RalewayRegular;
+    font-size: 15px;
+    width: 100px;
+}
+
+.admin__td {
+    background-color: #8960AF;
+    font-family: RalewayRegular;
+    padding: 10px 10px 10px 10px;
+}
+
+.admin_tr {
+    text-decoration: none;
+}
+
+.admin__td1 {
+    font-family: RalewayRegular;
+    color: #ffffff;
+    padding-left: 10px;
+    list-style: none;
+}
+
+.container1 {
+    min-height: 1100px;
+}
+
+.admin__th-left {
+    border-radius: 10px 0 0 0px;
+}
+
+.admin__th-right {
+    border-radius: 0px 10px 0 0px;
+}
+
+.admin-box {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.admin-label {
+    font-family: RalewayRegular;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #5A3A79;
+    padding: 20px 10px 20px 10px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.admin-wrap:first-child {
+    margin-left: 0px;
+}
+
+.admin-input {
+    background-color: #8960AF;
+    font-family: RalewayRegular;
+    padding: 20px 10px 20px 10px;
+    min-width: 100px;
+}
+
+.admin-wrap {
+    margin-left: 2px;
+}
+
+.admin-label-left {
+    border-radius: 10px 0 0 0px;
+}
+
+.admin-label-right {
+    border-radius: 0px 10px 0 0px;
+}

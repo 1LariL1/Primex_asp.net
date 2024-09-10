@@ -1,0 +1,54 @@
+﻿@model User
+
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container container1">
+    <a asp-controller="Users" asp-action="UserTable" class="title3"> <- Вернуться назад </a>
+    <form asp-controller="Users" asp-action="UserEditForm" method="post">
+        <div class="admin-box">
+            <input type="hidden" asp-for="IdUser" value="@Model.IdUser">
+            <input type="hidden" asp-for="Password" value="@Model.Password">
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-left">
+                    <label>Логин</label>
+                </div>
+                <input type="text" asp-for="Login" class="admin-input" required value="@Model.Login">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>ФИО</label>
+                </div>
+                <input type="text" asp-for="FullName" class="admin-input" required value="@Model.FullName">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Email</label>
+                </div>
+                <input type="email" asp-for="Email" class="admin-input" required value="@Model.Email">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label">
+                    <label>Телефон</label>
+                </div>
+                <input type="tel" asp-for="Telephone" class="admin-input" required value="@Model.Telephone">
+            </div>
+
+            <div class="admin-wrap">
+                <div class="admin-label admin-label-right">
+                    <label>Роль</label>
+                </div>
+                <select asp-for="Access" class="admin-input" required style="border: none; padding-right: 70px;">
+                    <option value="@Model.Access">@Model.Access</option>
+                    <option value="admin">Администратор</option>
+                    <option value="user">Пользователь</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="main-about-primex__button">Изменить</button>
+    </form>
+</div>

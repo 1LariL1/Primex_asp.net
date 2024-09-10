@@ -1,0 +1,188 @@
+﻿@model AccountModel
+
+}
+<style>
+    option {
+        background-color: #252525;
+    }
+</style>
+<section class="info">
+    <div class="container">
+        <div class="logout">
+            <h1 class="title2 logout-title">Личный кабинет</h1>
+            <a asp-controller="Account" asp-action="Logout" class="logout-button"><img src="/img/logout.png" alt="Выход"></a>
+        </div>
+
+        <div class="personal-info">
+            <div style="display:flex; justify-content: space-between; align-items: center;">
+                <h2 class="title9">Личная информация</h2>
+                <a class="personal-info__button" asp-action="AccountUpdateInfo">Изменить</a>
+            </div>
+
+            <div class="personal-info__wrapper">
+                <div class="personal-info__input">
+                    <h3 class="title10">Логин</h3>
+                    <p class="account-input2">@Model.User.Login</p>
+
+                </div>
+                <div class="personal-info__input">
+                    <h3 class="title10">Email</h3>
+                    <p class="account-input2">@Model.User.Email</p>
+
+                </div>
+
+            </div>
+
+            <div class="personal-info__wrapper">
+                <div class="personal-info__input">
+                    <h3 class="title10">Телефон</h3>
+                    <p class="account-input2">@Model.User.Telephone</p>
+
+                </div>
+                <div class="personal-info__input">
+
+                    <div class="personal-info__input-last">
+                        <h3 class="title10">ФИО</h3>
+                        <p class="account-input2">@Model.User.FullName</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="personal-orders">
+    <div class="container">
+        <h1 class="title2">История заказов</h1>
+        @if (Model.User.Orders != null && Model.User.Orders.Any())
+        {
+        <div class="personal-orders__wrapper">
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr1">
+                    <h3 class="title11">Номер</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr1">@order.IdOrders</p></div>
+                }
+            </div>
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr2">
+                    <h3 class="title11">Услуга</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr2">@order.IdServiceNavigation.Service1</p></div>
+                }
+            </div>
+
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr3">
+                    <h3 class="title11">Стоимость</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr3">@order.Price</p></div>
+                }
+            </div>
+
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr4">
+                    <h3 class="title11">Статус</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr4">@order.Status</p></div>
+                }
+            </div>
+
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr5">
+                    <h3 class="title11">Дата уборки</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr5">@order.Date</p></div>
+                }
+            </div>
+
+            <div class="personal-orders__attribute">
+                <div class="personal-orders__name-atr6">
+                    <h3 class="title11 title11-1">Время</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr6">@order.Time</p></div>
+                }
+            </div>
+
+            <div class="personal-orders__attribute-last">
+                <div class="personal-orders__name-atr7">
+                    <h3 class="title11">Адрес</h3>
+                </div>
+                @foreach (var order in Model.User.Orders)
+                {
+                    <div class="personal-orders__atr"><p class="account-atr7">@order.Address</p></div>
+                }
+            </div>
+            
+        </div>
+        }
+        else
+        {
+            <p class="title10">Вы еще не сделали заказ</p>
+        }
+    </div>
+</section>
+
+<section class="personal-form">
+    <div class="container">
+        <h1 class="title2">Сделать заказ</h1>
+
+        <div class="personal-form__wrapper">
+            <h2 class="title9">Оставить заявку</h2>
+            <form asp-controller="Account"  asp-action="CreateMessage" method="post">
+                <div class="personal-form__inputs">
+                    <div class="personal-form__service-address">
+                        <h3 class="title10">Услуга</h3>
+                        <input type="hidden" asp-for="Message.IdUser" value="@Model.User.IdUser">
+                        <select asp-for="Message.IdService" class="personal-form__dropdown account-input" required asp-items="@ViewData["IdService"] as SelectList">
+                            <option class="personal-form__option" value="">-- Выберите услугу --</option>
+                        </select>
+
+                        <h3 class="title10">Адрес уборки</h3>
+                        <input type="text" class="account-input personal-form__address" placeholder="Ваш адрес" asp-for="Message.Address" required>
+                    </div>
+
+                    <div class="personal-form__textarea">
+                        <h3 class="title10">Комментарий к заказу</h3>
+
+                        <div class="personal-form__comment-button">
+                            <textarea asp-for="Message.Comment" class="personal-form__comment account-input" placeholder="Нужно вымыть окна" required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="personal-form__button-text">
+                        <h3 class="title10">Желаемое время</h3>
+                        <select asp-for="Message.Time" class="personal-form__dropdown account-input" required>
+                            <option value="" class="personal-form__option">--Выберите время--</option>
+                            <option value="Утро (9:00-12:00)" class="personal-form__option">Утро (9:00-12:00)</option>
+                            <option value="День (13:00-16:00)" class="personal-form__option">День (13:00-16:00)</option>
+                            <option value="Вечер (17:00-20:00)" class="personal-form__option">Вечер (17:00-20:00)</option>
+                        </select>
+                        <h3 class="title10">Желаемая дата</h3>
+                        <input type="date" class="account-input personal-form__address" placeholder="Дата" asp-for="Message.Date" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <input type="submit" value="Отправить" name="form-button" class="personal-form__button">
+                    <p class="account-paragraph">Оператор свяжется с вами в течение 10 минут</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

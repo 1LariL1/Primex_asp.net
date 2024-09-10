@@ -1,0 +1,33 @@
+﻿@model Service
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container container1">
+
+    <table class="admin__table">
+        <tr class="admin__tr">
+            <th class="admin__th admin__th-left">ID</th>
+            <th class="admin__th">Услуга</th>
+            <th class="admin__th">Цена за 1 кв.м.</th>
+            <th class="admin__th admin__th-right">Описание</th>
+        </tr>
+
+        
+        <tr class="admin__tr">
+            <td class="admin__td">@Model.IdService</td>
+            <td class="admin__td">@Model.Service1</td>
+            <td class="admin__td">@Model.Price</td>
+            <td class="admin__td">@Model.Description</td>
+        </tr>
+        
+    </table>
+    
+    <p class="title3" style="margin-bottom: 20px;"> Вы уверены, что хотите удалить эту услугу? </p>
+    <form asp-controller="Services" asp-action="ServiceDelete" method="post">
+        <input type="hidden" asp-for="IdService" value="@Model.IdService" />
+        <button type="submit" class="main-about-primex__button">Удалить</button>
+        <a asp-controller="Services" asp-action="ServiceTable" class="main-about-primex__button" style="background-color: transparent; box-shadow: none;">Отмена</a>
+    </form>
+
+</div> 

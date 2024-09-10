@@ -1,0 +1,33 @@
+﻿@model IEnumerable<User>
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div class="container container1">
+    <table class="admin__table">
+        <tr class="admin__tr">
+            <th class="admin__th admin__th-left">ID</th>
+            <th class="admin__th">Логин</th>
+            <th class="admin__th">ФИО</th>
+            <th class="admin__th">Email</th>
+            <th class="admin__th">Телефон</th>
+            <th class="admin__th admin__th-right">Роль</th>
+        </tr>
+
+        @foreach (var user in Model) 
+        {  
+        <tr class="admin__tr">
+            <td class="admin__td">@user.IdUser</td>
+            <td class="admin__td">@user.Login</td>
+            <td class="admin__td">@user.FullName</td>
+            <td class="admin__td">@user.Email</td>
+            <td class="admin__td">@user.Telephone</td>
+            <td class="admin__td">@user.Access</td>
+            <td><a asp-action="UserEditForm" asp-route-id="@user.IdUser" class="admin__td1">Изменить</a></td>
+            <td><a asp-action="UserDelete" asp-route-id="@user.IdUser" class="admin__td1">Удалить</a></td>
+        </tr>
+        }
+    </table>
+    <a asp-controller="Users" asp-action="UserCreateForm" class="main-about-primex__button">Добавить запись</a>
+</div>

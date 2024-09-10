@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Service>
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+<div class="container container1">
+
+    <table class="admin__table">
+        <tr class="admin__tr">
+            <th class="admin__th admin__th-left">ID</th>
+            <th class="admin__th">Услуга</th>
+            <th class="admin__th">Цена за 1 кв.м.</th>
+            <th class="admin__th admin__th-right">Описание</th>
+        </tr>
+
+
+        @foreach (var service in Model)
+        {
+            <tr class="admin__tr">
+                <td class="admin__td">@service.IdService</td>
+                <td class="admin__td">@service.Service1</td>
+                <td class="admin__td">@service.Price</td>
+                <td class="admin__td">@service.Description</td>
+                <td><a asp-action="ServiceEditForm" asp-route-id="@service.IdService" class="admin__td1">Изменить</a></td>
+                <td><a asp-action="ServiceDelete" asp-route-id="@service.IdService" class="admin__td1">Удалить</a></td> 
+       </tr>
+        }
+    </table>
+    <a asp-controller="Services" asp-action="ServiceCreateForm" class="main-about-primex__button">Добавить запись</a>
+    
+</div> 

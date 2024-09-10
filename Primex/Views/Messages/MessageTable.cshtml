@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Message>
+
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div class="container container1">
+    <table class="admin__table">
+        <tr class="admin__tr">
+            <th class="admin__th admin__th-left">ID</th>
+            <th class="admin__th">Услуга</th>
+            <th class="admin__th">Пользователь</th>
+            <th class="admin__th">Адрес</th>
+            <th class="admin__th">Комментарий</th>
+            <th class="admin__th">Желаемое время</th>
+            <th class="admin__th admin__th-right">Желаемая дата</th>
+        </tr>
+
+        @foreach (var message in Model) {
+        <tr class="admin__tr">
+            <td class="admin__td">@message.IdMessage</td>
+            <td class="admin__td">@message.IdServiceNavigation.Service1</td>
+            <td class="admin__td">@message.IdUserNavigation.Login</td>
+            <td class="admin__td">@message.Address</td>
+            <td class="admin__td">@message.Comment</td>
+            <td class="admin__td">@message.Time</td>
+            <td class="admin__td">@message.Date</td>
+            <td><a asp-action="MessageDelete" asp-route-id="@message.IdMessage" class="admin__td1">Удалить</a></td>
+        </tr>
+        }
+    </table>
+</div>
